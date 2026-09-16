@@ -1,0 +1,10 @@
+console.log("Hello!")
+console.log(7==7.0);
+console.log(undefined==NaN);
+//false=>0
+//true=>1
+//null=>NaN
+//undefined=>NaN
+//""=>false
+//{}=>
+//[]
