@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First JavaScript Page</title>
+</head>
+<body>
+    <button id="messageButton" class="btn">Click Here</button>
+<button id="colorButton" class="btn">Change Background</button>
+
+<script>
+  const messageButton = document.getElementById("messageButton");
+  const colorButton = document.getElementById("colorButton");
+
+  messageButton.addEventListener("click", function () {
+    alert("Hello, B.Tech Student!");
+  });
+
+  colorButton.addEventListener("click", function () {
+    document.body.style.backgroundColor = "lightblue";
+  });
+  console.log("JavaScript is running successfully!")
+</script>
+
+
+</body>
+</html>
