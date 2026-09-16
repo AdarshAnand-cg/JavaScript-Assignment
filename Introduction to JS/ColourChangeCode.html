@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Kumar</title>
+    <style>
+        button {
+            display: inline-block;
+            font-weight: bolder;
+            margin: auto;
+            font-size: x-large;
+        }
+        
+        button:hover {
+            font-size: xx-large;
+        }
+
+        #blue:hover {
+            border: 5px solid blue;
+        }
+
+        #green:hover {
+            border: 5px solid green;
+        }
+
+        #red:hover {
+            border: 5px solid red;
+        }
+
+        #black:hover {
+            border: 5px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="blueBg()" id="blue">Blue</button>
+    <button onclick="greenBg()" id="green">Green</button>
+    <button onclick="redBg()" id="red">Red</button>
+    <button onclick="blackBg()" id="black">Black</button>
+
+    <script>
+        function blueBg(){
+            document.body.style.backgroundColor="blue"
+        }
+        function greenBg(){
+            document.body.style.backgroundColor="green"
+        }
+        function redBg(){
+            document.body.style.backgroundColor="red"
+        }
+        function blackBg(){
+            document.body.style.backgroundColor="black"
+        }
+    </script>
+</body>
+</html>
