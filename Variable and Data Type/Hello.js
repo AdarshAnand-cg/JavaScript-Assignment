@@ -1,10 +1,10 @@
 // Assignment 1: Variable Declaration Practice
 
-var name = "Adarsh";
+var Name = "Adarsh";
 let age = 18;
 const PI = 3.14159;
 
-console.log(name);
+console.log(Name);
 console.log(age);
 console.log(PI);
 

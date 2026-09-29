@@ -1,0 +1,325 @@
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.frame .macbook-pro-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.frame .macbook-pro {
+  display: flex;
+  flex-direction: column;
+  height: 1117px;
+  align-items: flex-start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  background-image: url(./img/macbook-pro-16-9.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.frame .div {
+  position: relative;
+  width: 1728px;
+  height: 205px;
+}
+
+.frame .PHOBIA-cafe-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  padding: 5px 0px;
+  position: absolute;
+  top: 38px;
+  left: 231px;
+}
+
+.frame .PHOBIA-cafe {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Libertinus Keyboard-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 44px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .HOME-PROFILE-ABOUT-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 31px 30px;
+  position: absolute;
+  top: 58px;
+  left: 704px;
+  border-radius: 29px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #481806;
+}
+
+.frame .HOME-PROFILE-ABOUT {
+  position: relative;
+  width: fit-content;
+  font-family: "Joti One-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .div-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 31px;
+  position: absolute;
+  top: 57px;
+  left: 1438px;
+  background-color: #481806;
+  border-radius: 29px;
+  overflow: hidden;
+  border: 1px solid;
+}
+
+.frame .text-wrapper {
+  position: relative;
+  width: fit-content;
+  font-family: "Joti One-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .cafe {
+  position: absolute;
+  top: 6px;
+  left: 42px;
+  width: 142px;
+  height: 142px;
+  object-fit: cover;
+}
+
+.frame .div-2 {
+  position: relative;
+  width: 1728px;
+  height: 912px;
+}
+
+.frame .COFFEE-SHOP-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 52px 3px;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+
+.frame .COFFEE-SHOP {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "JejuHallasan-Regular", Helvetica;
+  font-weight: 400;
+  color: #481806;
+  font-size: 154px;
+  letter-spacing: -9.24px;
+  line-height: 155px;
+  white-space: nowrap;
+}
+
+.frame .welcome-to-phobia-wrapper {
+  display: flex;
+  width: 937px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 28px 37px;
+  position: absolute;
+  top: 186px;
+  left: 37px;
+}
+
+.frame .welcome-to-phobia {
+  position: relative;
+  width: 914px;
+  margin-top: -1px;
+  margin-left: -25.5px;
+  margin-right: -25.5px;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #481806;
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: 33px;
+}
+
+.frame .div-wrapper-2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 31px;
+  position: absolute;
+  top: 443px;
+  left: 37px;
+  background-color: #481806;
+  border-radius: 29px;
+  overflow: hidden;
+  border: 1px solid;
+}
+
+.frame .element-reviews {
+  position: absolute;
+  top: 577px;
+  left: 48px;
+  font-family: "Porter Sans Block-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 52px;
+  letter-spacing: 0;
+  line-height: 52px;
+}
+
+.frame .span {
+  line-height: 63.2px;
+}
+
+.frame .text-wrapper-2 {
+  font-size: 32px;
+  line-height: 38.9px;
+}
+
+.frame .rectangle {
+  position: absolute;
+  top: 570px;
+  left: 299px;
+  width: 3px;
+  height: 105px;
+  background-color: #481806;
+  border-radius: 22px;
+}
+
+.frame .element-varieties {
+  position: absolute;
+  top: 578px;
+  left: 334px;
+  font-family: "Porter Sans Block-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 52px;
+  letter-spacing: 0;
+  line-height: 63.2px;
+}
+
+.frame .text-wrapper-3 {
+  font-family: "Porter Sans Block-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 52px;
+  letter-spacing: 0;
+  line-height: 63.2px;
+}
+
+.frame .div-wrapper-3 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 31px;
+  position: absolute;
+  top: 440px;
+  left: 303px;
+  background-color: #fffaf7;
+  border-radius: 29px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #481806;
+}
+
+.frame .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  font-family: "Joti One-Regular", Helvetica;
+  font-weight: 400;
+  color: #481806;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .images {
+  position: absolute;
+  top: 0;
+  left: 1017px;
+  width: 684px;
+  height: 646px;
+  object-fit: cover;
+}
+/* Original style.css code is injected here automatically. */
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
+button.div-wrapper-2,
+button.div-wrapper-3 {
+  color: inherit;
+}
+
+.HOME-PROFILE-ABOUT a {
+  color: inherit;
+}
+
+.HOME-PROFILE-ABOUT a:focus-visible,
+.div-wrapper a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #4a90e2;
+  outline-offset: 4px;
+}
+
+@media (max-width: 1100px) {
+  .frame .macbook-pro {
+    min-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

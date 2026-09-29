@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Phobia Cafe</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background-color: #e9dfc9;
+            color: #4b1d0b;
+        }
+
+        /* Main page */
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+
+            /* Coffee background */
+            background-image:
+                linear-gradient(
+                    rgba(245, 235, 210, 0.35),
+                    rgba(245, 235, 210, 0.35)
+                ),
+                url("coffee-background.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            padding: 25px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 38px;
+        }
+
+        .logo-text {
+            font-family: monospace;
+            font-weight: bold;
+            letter-spacing: 5px;
+            line-height: 1;
+            font-size: 15px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            border: 1px solid #57301e;
+            border-radius: 25px;
+
+            padding: 12px 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #35170b;
+
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #9a4e25;
+        }
+
+        /* Sign up button */
+        .signup {
+            background-color: #5b200c;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 13px 22px;
+            border-radius: 12px;
+
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .signup:hover {
+            background-color: #8a3d1d;
+        }
+
+        /* Main content */
+        .content {
+            width: 86%;
+            margin: 20px auto 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+        }
+
+        /* Left side */
+        .left-content {
+            width: 52%;
+        }
+
+        .left-content h1 {
+            font-family: "Brush Script MT", cursive;
+            font-size: clamp(55px, 7vw, 105px);
+
+            font-weight: bold;
+            font-style: italic;
+
+            line-height: 0.9;
+
+            margin-bottom: 20px;
+        }
+
+        .description {
+            max-width: 600px;
+
+            font-size: 13px;
+            line-height: 1.45;
+
+            color: #542411;
+
+            margin-bottom: 25px;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 20px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .order {
+            background-color: #5a210d;
+            color: white;
+        }
+
+        .login {
+            background-color: transparent;
+            color: #4c1d0c;
+
+            border: 1px solid #5a210d;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Right coffee image */
+        .coffee-container {
+            width: 42%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .coffee-image {
+            width: min(430px, 100%);
+            aspect-ratio: 1 / 1;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 8px solid rgba(110, 93, 66, 0.3);
+
+            box-shadow:
+                0 0 0 15px rgba(120, 105, 78, 0.12);
+        }
+
+        /* Statistics */
+        .stats {
+            width: 86%;
+
+            margin: 30px auto 0;
+
+            display: flex;
+            gap: 60px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stat-icon {
+            font-size: 32px;
+        }
+
+        .stat-number {
+            font-family: monospace;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .stat-title {
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* ========================= */
+        /* LAPTOP */
+        /* ========================= */
+
+        @media (max-width: 1200px) {
+
+            header {
+                padding: 20px 5%;
+            }
+
+            .content {
+                width: 90%;
+                gap: 30px;
+            }
+
+            .left-content h1 {
+                font-size: clamp(50px, 7vw, 80px);
+            }
+
+            .description {
+                font-size: 12px;
+            }
+
+            .stats {
+                width: 90%;
+            }
+        }
+
+
+        /* ========================= */
+        /* TABLET */
+        /* ========================= */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav {
+                order: 3;
+            }
+
+            .content {
+                flex-direction: column;
+
+                text-align: center;
+
+                margin-top: 30px;
+            }
+
+            .left-content {
+                width: 100%;
+            }
+
+            .description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .coffee-container {
+                width: 70%;
+            }
+
+            .stats {
+                justify-content: center;
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+        }
+
+
+        /* ========================= */
+        /* MOBILE */
+        /* ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .logo-icon {
+                font-size: 28px;
+            }
+
+            .logo-text {
+                font-size: 12px;
+            }
+
+            nav {
+                gap: 12px;
+                padding: 10px 15px;
+            }
+
+            nav a {
+                font-size: 9px;
+            }
+
+            .signup {
+                padding: 10px 15px;
+                font-size: 9px;
+            }
+
+            .content {
+                width: 90%;
+            }
+
+            .left-content h1 {
+                font-size: 55px;
+            }
+
+            .description {
+                font-size: 11px;
+            }
+
+            .coffee-container {
+                width: 85%;
+            }
+
+            .stats {
+                width: 90%;
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 20px;
+            }
+
+            .stat-title {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="hero">
+
+        <!-- HEADER -->
+        <header>
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">☕</div>
+
+                <div class="logo-text">
+                    PHOBBA<br>
+                    CAFE
+                </div>
+            </div>
+
+
+            <!-- Navigation -->
+            <nav>
+                <a href="#">HOME</a>
+                <a href="#">PROFILE</a>
+                <a href="#">ABOUT US</a>
+                <a href="#">CONTACTS</a>
+            </nav>
+
+
+            <!-- Sign Up -->
+            <a href="#" class="signup">
+                SIGN UP
+            </a>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <section class="content">
+
+            <!-- LEFT SIDE -->
+            <div class="left-content">
+
+                <h1>
+                    COFFEE SHOP
+                </h1>
+
+                <p class="description">
+                    Welcome to Phobba Café, a quirky little sanctuary where
+                    conquering your daily dread starts with a single,
+                    perfectly brewed cup. It's the ultimate cure for
+                    anyone afraid of a mediocre brew. Step inside our cozy
+                    sanctuary, where our high spirits are matched only by
+                    our espresso extraction skills.
+                </p>
+
+
+                <!-- Buttons -->
+                <div class="buttons">
+
+                    <a href="#" class="btn order">
+                        ORDER NOW
+                    </a>
+
+                    <a href="#" class="btn login">
+                        LOGIN
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <div class="coffee-container">
+
+                <!-- Replace this image with your coffee image -->
+                <img
+                    src="coffee-cup.jpg"
+                    alt="Coffee cup"
+                    class="coffee-image"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="stats">
+
+            <div class="stat">
+
+                <div class="stat-icon">
+                    ☕
+                </div>
+
+                <div>
+                    <div class="stat-number">
+                        1K+
+                    </div>
+
+                    <div class="stat-title">
+                        REVIEWS
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-icon">
+                    ☕
+                </div><hr>
+
+                <div>
+                    <div class="stat-number">
+                        100+
+                    </div>
+
+                    <div class="stat-title">
+                        VARIETIES
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

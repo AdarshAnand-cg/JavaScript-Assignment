@@ -194,3 +194,4 @@ let numBer=2;
 console.log(`The total number of pixels for using pixels**2 is${pixelOfOneImage**numBer}`);
 
 
+let username=prompt("Enter Your Name:-")
