@@ -19,13 +19,13 @@ if(age>=18){
     console.log("You Are Eligible for Vote")
 }
 
-// if(condition){
-// }else{
+if(condition){
+}else{
 
-// }
+}
 
-let studentMarks=27;
-if(studentMarks>33){
+let StudentMarks=27;
+if(StudentMarks>33){
     console.log("You Are Passed")
 }else{
     console.log("Oops!You Are Failed\nBetter Luck Next Time")
@@ -51,3 +51,5 @@ if(year%4==0){
 }else{
     console.log("It Isn't Leap Year")
 }
+
+
