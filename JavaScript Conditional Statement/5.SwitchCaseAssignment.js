@@ -94,8 +94,8 @@ switch(true){
         break;
     case marks>=0 && marks<35:
         console.log("Failed")
-    
 }
+
 
 
 

@@ -4,7 +4,6 @@
 
 // 1. Number greater than 10 and divisible by 3
 let d1 = 18;
-
 if (d1 > 10) {
     if (d1 % 3 === 0) {
         console.log("Number is greater than 10 and divisible by 3");
@@ -14,8 +13,6 @@ if (d1 > 10) {
 } else {
     console.log("Number is not greater than 10");
 }
-
-
 // 2. Voting with voter ID
 let d2 = 21;
 let hasVoterID = true;
