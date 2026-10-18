@@ -623,3 +623,179 @@ inside the loop prints 60 and 70,whether the console.log outside
 the function gives 80 as the output ,by increament of 10 to the the 
 last output of the marks inside the loop
 */
+//==================================================
+//      Question-28
+//==================================================
+function test() {
+    var value = 5;
+    while (value < 8) {
+        console.log(value);
+        value++;
+    }
+    console.log("Final value:", value);
+}
+test();
+
+/*
+Q.>How many times does the loop execute?
+Ans:-The loop executes 3 times because the value starts from 5 and runs
+while value is less than 8. It prints 5, 6 and 7. After the last increment,
+the value becomes 8, so the loop stops.
+*/
+
+
+//==================================================
+//      Question-29
+//==================================================
+function calculate() {
+    for (var i = 1; i <= 2; i++) {
+        console.log(i);
+    }
+}
+console.log(i);
+calculate();
+
+/*
+Q.>Find and explain the error. Why does the order of these statements matter?
+Ans:-The first console.log(i) gives a ReferenceError because i is declared
+inside the calculate() function. The variable i is function-scoped because
+it uses var, so it can only be accessed inside the calculate() function.
+The order matters because console.log(i) is written before the function
+is called, but even if calculate() was called first, i would still not be
+accessible outside the function.
+*/
+
+
+//==================================================
+//      Question-30
+//==================================================
+function printNumbers() {
+    for (var number = 1; number <= 5; number++) {
+        console.log(number);
+    }
+    console.log("Final:", number);
+}
+printNumbers();
+console.log(number);
+
+/*
+Q.>Explain the expected error.
+Ans:-The loop prints numbers from 1 to 5. After the loop, number becomes 6,
+so the console.log inside the function prints 6. Because number is declared
+using var, it is function-scoped and can be accessed anywhere inside the
+printNumbers() function. However, it cannot be accessed outside the function,
+so the last console.log(number) gives a ReferenceError.
+*/
+
+
+//==================================================
+//      Question-31
+//==================================================
+console.log(score);
+var score = 90;
+console.log(score);
+
+/*
+Q.>Explain why the first statement does not produce a ReferenceError.
+Ans:-The first console.log prints undefined because var variables are
+hoisted. The declaration of score is moved to the top of its scope during
+hoisting, but its value is not assigned until var score = 90 is reached.
+The second console.log prints 90.
+*/
+
+
+//==================================================
+//      Question-32
+//==================================================
+var a = 10;
+
+function test() {
+    console.log(a);
+    var a = 20;
+    console.log(a);
+}
+test();
+
+/*
+Q.>Why doesn't the first console.log() print the global value of "a"?
+Ans:-The first console.log() prints undefined because the local variable a
+is declared inside the test() function using var. Due to hoisting, the local
+declaration of a is moved to the top of the function. Therefore, JavaScript
+uses the local a instead of the global a. Its value is undefined until
+a = 20 is executed. The second console.log() prints 20.
+*/
+
+
+//==================================================
+//      Question-33
+//==================================================
+console.log(first);
+console.log(second);
+var first = 100;
+var second = 200;
+console.log(first);
+console.log(second);
+
+/*
+Q.>Identify which statements produce undefined.
+Ans:-The first console.log(first) and the second console.log(second) both
+produce undefined because the var declarations are hoisted to the top,
+but their values are assigned later. The third console.log(first) prints
+100 and the fourth console.log(second) prints 200.
+*/
+
+
+//==================================================
+//      Question-34
+//==================================================
+function calculate() {
+    console.log(total);
+    var total = 50;
+    console.log(total);
+}
+calculate();
+
+/*
+Q.>Rewrite the code to represent how the variable declaration is handled during hoisting.
+Ans:-The declaration of total is hoisted to the top of the function, but
+the value 50 is assigned at its original position.
+*/
+
+function calculate() {
+    var total;
+    console.log(total);
+    total = 50;
+    console.log(total);
+}
+calculate();
+
+
+//==================================================
+//      Question-35
+//==================================================
+var price = 100;
+
+function showPrice() {
+    console.log(price);
+    var price = 500;
+}
+
+showPrice();
+console.log(price);
+
+/*
+Q.>What does the first console.log() inside the function print?
+Ans:-It prints undefined because the local price variable is hoisted to
+the top of the showPrice() function.
+
+Q.>What does the final console.log() print?
+Ans:-It prints 100 because the final console.log() is outside the function
+and accesses the global price variable.
+
+Q.>How does hoisting affect the local variable price?
+Ans:-Hoisting moves the declaration of the local price to the top of the
+function. Therefore, the local price exists inside the function before
+price = 500 is executed. It hides the global price inside the function,
+so the first console.log() prints undefined instead of 100.
+*/
+
