@@ -484,3 +484,106 @@ display() function can access them through the scope chain.
 */
 
 
+//==================================================
+//      Question-56
+//==================================================
+function test() {
+    x = 100;
+}
+test();
+console.log(x);
+
+/*
+Q.> What is the problem in this code?
+Ans:-The Output will be:-
+100
+
+The problem is that x is not declared using var, let, or const. In
+non-strict mode, JavaScript can create x as a global variable. This
+is an unintended side effect because a local variable accidentally
+becomes global.
+*/
+
+
+//==================================================
+//      Question-57
+//==================================================
+if (true) {
+    var x = 20;
+}
+console.log(x);
+
+/*
+Q.> Predict the output and explain the misconception:
+Ans:-The Output of the given code is as follows:-
+20
+
+Beginners often expect an error because x is inside the if block.
+However, var does not have block scope. It is function-scoped, or
+global-scoped when declared outside a function. Therefore, x is
+accessible outside the if block.
+*/
+
+
+//==================================================
+//      Question-58
+//==================================================
+console.log(a);
+var a = 10;
+
+/*
+Q.> What happens here?
+Ans:-The Output of the given code is as follows:-
+undefined
+
+The var declaration is hoisted to the top, but its value is not
+assigned until the original line is reached. JavaScript treats it
+approximately as:
+var a;
+console.log(a);
+a = 10;
+Therefore, there is no ReferenceError and undefined is printed.
+*/
+
+
+//==================================================
+//      Question-59
+//==================================================
+var x = 10;
+var x = 20;
+console.log(x);
+
+/*
+Q.> Find the output. Is this allowed with var?
+Ans:-The Output of the given code is as follows:-
+20
+
+Yes, redeclaring a variable using var in the same scope is allowed.
+The second assignment changes the value to 20. Although allowed,
+redeclaring variables can become confusing and may cause accidental
+changes in larger programs.
+*/
+
+
+//==================================================
+//      Question-60
+//==================================================
+function calculate() {
+    var total = 0;
+    for (var i = 1; i <= 5; i++) {
+        total = total + i;
+    }
+    console.log(total);
+}
+calculate();
+
+/*
+Q.> Rewrite the code to avoid accidentally creating a global variable:
+Ans:-The Output of the given function is as follows:-
+15
+
+The main problem was total = 0 without declaring total. The corrected
+code uses var total = 0, so total becomes local to calculate(). Thus,
+it cannot be accessed outside the function and accidentally become
+a global variable.
+*/
