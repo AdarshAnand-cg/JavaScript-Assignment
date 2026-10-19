@@ -76,8 +76,7 @@ var marks = [80, 75, 90];
 marks[1] = 95;
 
 // Question-4.3
-// Ans:-The Output will be:-
-//       [80, 95, 90]
+// Ans:-The Output is [80,95,90]
 
 // Question-4.4
 // Ans:- False. We do not need any special built-in method like
@@ -135,7 +134,7 @@ console.log(arr.length);
 
 // Question-6.3
 // Ans:- In a while loop, the increment step i++ is generally placed
-//       after the array access statement.
+//       inside the while loop that is just after the array access statement.
 
 // Question-6.4
 // Ans:-
