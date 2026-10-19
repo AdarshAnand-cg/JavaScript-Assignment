@@ -99,3 +99,145 @@ its declaration. The function also accesses the global variable
 message, which is available in the global scope.
 */
 
+
+//==================================================
+//      Question-41
+//==================================================
+var institute = "CodingGita";
+function department() {
+    var dept = "CSE";
+    function batch() {
+        var year = 2025;
+        console.log(year);
+        console.log(dept);
+        console.log(institute);
+    }
+    batch();
+}
+department();
+
+/*
+Q.> Predict the output and explain the lookup process:
+Ans:-The Output of the given function is as follows:-
+2025
+CSE
+CodingGita
+
+batch() first finds year in its own scope. Then it searches the outer
+department() scope and finds dept. Finally, it searches the global
+scope and finds institute. This searching process is called the
+scope chain.
+*/
+
+
+//==================================================
+//      Question-42
+//==================================================
+var globalVar = "I am global";
+function outer() {
+    var outerVar = "I am outer";
+    function inner() {
+        console.log(globalVar);
+        console.log(outerVar);
+        console.log(innerVar);
+    }
+    inner();
+}
+outer();
+
+/*
+Q.> What will happen when this code runs?
+Ans:-The Output will be:-
+I am global
+I am outer
+
+After that, the program gives a ReferenceError for innerVar because
+JavaScript searches the inner(), outer(), and global scopes but cannot
+find innerVar anywhere.
+*/
+
+
+//==================================================
+//      Question-43
+//==================================================
+var a = 1;
+function level1() {
+    var b = 2;
+    function level2() {
+        var c = 3;
+        function deep() {
+            console.log(a, b, c);
+        }
+        deep();
+    }
+    level2();
+}
+level1();
+
+/*
+Q.> Identify which variables are accessible inside deep():
+Ans:-The Output of the given function is as follows:-
+1 2 3
+
+deep() can access a from the global scope, b from level1(), and c
+from level2(). This is possible because of the scope chain.
+*/
+
+
+//==================================================
+//      Question-44
+//==================================================
+var x = "global";
+function first() {
+    var x = "first";
+    function second() {
+        console.log(x);
+    }
+    second();
+}
+first();
+console.log(x);
+
+/*
+Q.> Predict the output and explain:
+Ans:-The Output of the given function is as follows:-
+first
+global
+
+Inside second(), JavaScript finds x in the outer first() function,
+so it prints "first". Outside the function, console.log(x) uses the
+global x, so it prints "global". These are two different variables.
+*/
+
+
+//==================================================
+//      Question-45
+//==================================================
+var country = "India";
+function outer() {
+    var state = "Gujarat";
+    function middle() {
+        var city = "Ahmedabad";
+        function inner() {
+            console.log(city);
+            console.log(state);
+            console.log(country);
+        }
+        inner();
+    }
+    middle();
+}
+outer();
+
+/*
+Q.> Write a nested function structure that demonstrates the scope chain:
+Ans:-The Output of the given function is as follows:-
+Ahmedabad
+Gujarat
+India
+
+inner() accesses city from its own scope, state from middle(), and
+country from the global scope. The scope chain is:
+inner() -> middle() -> outer() -> global scope
+*/
+
