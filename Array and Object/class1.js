@@ -10,7 +10,7 @@ var numbers = [10, 20, 30, 40];
 
 // 3. Accessing Values in an Array
 // METHOD-2(Using the Array constructor (less common)
-let students=Array("Adarsh","Anand","Singh")
+let students=new Array("Adarsh","Anand","Singh")
 console.log(students)
 // For extraction of any student name from the array
 console.log(students[10])
@@ -40,3 +40,16 @@ let names=["John Snow","Arya Stark","Joffrey Baratheon","Theon Greyjoy","Tyrion 
 for (let i=0;i<names.length;i++){
     console.log(names[i])
 }
+
+// Updation of value in an array
+mark=[23,45,77]
+mark[7]=46
+console.log(mark)
+console.log(typeof(mark[4]))
+
+fheufue=[32,5345,75677,65]
+fheufue[1]=45
+console.log(fheufue[1])
+
+let st=new Array("hyw",432,true,23.9)
+console.log(st[1])
