@@ -13,7 +13,7 @@ var numbers = [10, 20, 30, 40];
 let students=Array("Adarsh","Anand","Singh")
 console.log(students)
 // For extraction of any student name from the array
-console.log(students[0])
+console.log(students[10])
 // for last name extraction from the array
 console.log(students[2])
 console.log(students.at(-1))
