@@ -241,3 +241,118 @@ country from the global scope. The scope chain is:
 inner() -> middle() -> outer() -> global scope
 */
 
+
+//==================================================
+//      Question-46
+//==================================================
+var score = 50;
+function test() {
+    var score = 90;
+    console.log(score);
+}
+test();
+console.log(score);
+
+/*
+Q.> Predict the output and explain shadowing:
+Ans:-The Output of the given function is as follows:-
+90
+50
+
+The local score = 90 shadows the global score = 50 inside the test()
+function. Therefore, inside the function 90 is printed, while outside
+the function 50 is printed.
+*/
+
+
+//==================================================
+//      Question-47
+//==================================================
+var name = "Global Name";
+function show() {
+    var name = "Local Name";
+    console.log(name);
+}
+show();
+console.log(name);
+
+/*
+Q.> What will be printed? Does the local variable change the global one?
+Ans:-The Output of the given function is as follows:-
+Local Name
+Global Name
+
+The local name exists only inside show(). It shadows the global name
+but does not permanently change it. Therefore, the global value remains
+"Global Name".
+*/
+
+
+//==================================================
+//      Question-48
+//==================================================
+var value = 10;
+function update() {
+    value = 20;
+    console.log(value);
+}
+update();
+console.log(value);
+
+/*
+Q.> Find the output and explain:
+Ans:-The Output of the given function is as follows:-
+20
+20
+
+Since value is not declared again inside update(), JavaScript finds the
+global value and changes it to 20. This is different from using
+var value = 20, which would create a local variable.
+*/
+
+
+//==================================================
+//      Question-49
+//==================================================
+var color = "Blue";
+function changeColor() {
+    var color = "Red";
+    console.log("Inside:", color);
+}
+changeColor();
+console.log("Outside:", color);
+
+/*
+Q.> Predict the complete output:
+Ans:-The Output of the given function is as follows:-
+Inside: Red
+Outside: Blue
+
+The local color variable shadows the global color variable. Therefore,
+inside the function Red is printed and outside the function Blue is
+printed.
+*/
+
+
+//==================================================
+//      Question-50
+//==================================================
+var marks = 70;
+function showMarks() {
+    var marks = 95;
+    console.log("Inside:", marks);
+}
+showMarks();
+console.log("Outside:", marks);
+
+/*
+Q.> Write a program that demonstrates variable shadowing:
+Ans:-The Output of the given function is as follows:-
+Inside: 95
+Outside: 70
+
+The marks declared inside showMarks() is a local variable. It shadows
+the global marks variable, so the values remain separate.
+*/
+
+
