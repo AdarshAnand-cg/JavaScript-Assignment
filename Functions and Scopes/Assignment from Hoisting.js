@@ -356,3 +356,131 @@ the global marks variable, so the values remain separate.
 */
 
 
+//==================================================
+//      Question-51
+//==================================================
+function outer() {
+    var teacher = "Kartik Sir";
+    function inner() {
+        var student = "Jenil";
+        console.log(student);
+        console.log(teacher);
+    }
+    inner();
+}
+outer();
+
+/*
+Q.> Predict the output. Can teacher or student be accessed outside?
+Ans:-The Output of the given function is as follows:-
+Jenil
+Kartik Sir
+
+inner() can access both student and teacher. However, outside outer(),
+these local variables cannot be directly accessed because they belong
+to the local scopes of the functions.
+*/
+
+
+//==================================================
+//      Question-52
+//==================================================
+function parent() {
+    var a = "Parent";
+    function child() {
+        var b = "Child";
+        function grandchild() {
+            var c = "Grandchild";
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        grandchild();
+    }
+    child();
+}
+parent();
+
+/*
+Q.> What will this code print?
+Ans:-The Output of the given function is as follows:-
+Parent
+Child
+Grandchild
+
+grandchild() can access c from its own scope, b from child(), and a
+from parent(). Therefore, the scope chain is:
+grandchild() -> child() -> parent() -> global scope
+*/
+
+
+//==================================================
+//      Question-53
+//==================================================
+function outer() {
+    var secret = "Hidden";
+    function inner() {
+        console.log(secret);
+    }
+}
+inner();
+outer();
+
+/*
+Q.> Find the error(s):
+Ans:-The code gives a ReferenceError because inner() is declared inside
+outer() and is not available in the global scope. Calling inner()
+outside outer() is not allowed. The main issue is the scope and
+placement of the function, not simply the order of the calls.
+*/
+
+
+//==================================================
+//      Question-54
+//==================================================
+function createMessage() {
+    var greeting = "Hello";
+    function show() {
+        console.log(greeting + " students");
+    }
+    return show;
+}
+var messageFunc = createMessage();
+messageFunc();
+
+/*
+Q.> Predict the output and explain how show() still accesses greeting:
+Ans:-The Output of the given function is as follows:-
+Hello students
+
+The inner function show() remembers the variable greeting from its
+outer scope even after createMessage() finishes. This behavior is
+called a closure.
+*/
+
+
+//==================================================
+//      Question-55
+//==================================================
+function studentInfo() {
+    var name = "Adarsh";
+    var course = "Web Development";
+    function display() {
+        console.log("Name:", name);
+        console.log("Course:", course);
+    }
+    display();
+}
+studentInfo();
+
+/*
+Q.> Write a function named studentInfo():
+Ans:-The Output of the given function is as follows:-
+Name: Adarsh
+Course: Web Development
+
+The variables name and course are local to studentInfo(). The inner
+display() function can access them through the scope chain.
+*/
+
+
