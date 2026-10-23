@@ -149,3 +149,198 @@ for (var i = 0; i < students.length; i++) {
 //       When i becomes equal to students.length, students[i] will
 //       access an index that does not exist, so it will print
 //       undefined.
+
+
+// ==========================================
+// 7. Adding Elements to Arrays
+// ==========================================
+
+// Question-7.1
+// Ans:- The method used to add an element at the end of an array
+//       is "push()".
+
+// Question-7.2
+// Ans:- The method used to add an element at the beginning of an
+//       array is "unshift()".
+
+// Question-7.3
+// Ans:-
+let nums = [1, 2, 3];
+
+nums.push(4);
+
+console.log(nums);
+
+// Ans:- The Output will be:-
+//       [1, 2, 3, 4]
+
+
+// Question-7.4
+// Ans:-
+nums.unshift(0);
+
+console.log(nums);
+
+// Ans:- The Output will be:-
+//       [0, 1, 2, 3, 4]
+
+
+// Question-7.5
+// Ans:- True.
+//
+//       Both push() and unshift() modify the original array.
+//       Therefore, both are mutating methods.
+
+
+
+// ==========================================
+// 8. Removing Elements
+// ==========================================
+
+// Question-8.1
+// Ans:- The method used to remove the last element of an array
+//       is "pop()".
+
+// Question-8.2
+// Ans:- The method used to remove the first element of an array
+//       is "shift()".
+
+// Question-8.3
+// Ans:-
+let numbers = [100, 200, 300, 400, 500];
+
+numbers.pop();
+
+console.log(numbers);
+
+// Ans:- pop() removes the last element from the array.
+//
+//       The last element is 500.
+//
+//       The Output will be:-
+//       [100, 200, 300, 400]
+
+
+// Question-8.4
+// Ans:-
+numbers.shift();
+
+console.log(numbers);
+
+// Ans:- shift() removes the first element from the array.
+//
+//       The first element is 100.
+//
+//       The Output will be:-
+//       [200, 300, 400]
+
+
+// Question-8.5
+// Ans:- pop() and shift() both return the element that they remove.
+//
+//       pop() returns the last removed element.
+//
+//       shift() returns the first removed element.
+//
+//       Example:-
+
+let values = [10, 20, 30];
+
+let removedValue = values.pop();
+
+console.log(removedValue);
+
+// Ans:- The Output will be:-
+//       30
+
+
+
+// ==========================================
+// 9. Searching in Arrays
+// ==========================================
+
+// Question-9.1
+// Ans:- The indexOf() method returns the index of the searched
+//       value when the value is found in the array.
+
+// Question-9.2
+// Ans:- If the searched value is not present in the array,
+//       indexOf() returns -1.
+
+// Question-9.3
+// Ans:-
+const names = ["Jenil", "Mahir", "Arjun"];
+
+console.log(names.indexOf("Mahir"));
+
+// Ans:- The Output will be:-
+//       1
+//
+//       "Mahir" is present at index 1.
+
+
+// Question-9.4
+// Ans:-
+console.log(names.indexOf("Krishna"));
+
+// Ans:- The Output will be:-
+//       -1
+//
+//       "Krishna" is not present in the array.
+
+
+// Question-9.5
+// Ans:-
+let students = ["Jenil", "Mahir", "Priyesha", "Yashvi"];
+
+console.log(students.indexOf("Priyesha"));
+
+// Ans:- The Output will be:-
+//       2
+
+
+
+// ==========================================
+// 10. Array with Different Data Types
+// ==========================================
+
+// Question-10.1
+// Ans:- Yes, a JavaScript array can store values of different
+//       data types in the same array.
+//
+//       For example, an array can contain a number, string,
+//       boolean, and null value.
+
+// Question-10.2
+// Ans:-
+let data = [100, "Hello", true, null];
+
+
+// Question-10.3
+// Ans:- We can use the typeof operator to check the data type
+//       of each element in an array.
+//
+//       Example:-
+
+console.log(typeof data[0]);
+console.log(typeof data[1]);
+console.log(typeof data[2]);
+console.log(typeof data[3]);
+
+
+// Question-10.4
+// Ans:-
+const data2 = [100, "Hello", true, null];
+
+console.log(typeof data2[0]);
+
+// Ans:- The Output will be:-
+//       number
+
+
+// Question-10.5
+// Ans:-
+console.log(typeof data2[2]);
+
+// Ans:- The Output will be:-
+//       boolean
