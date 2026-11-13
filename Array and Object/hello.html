@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment Check</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 550px;
+            min-height: 330px;
+            padding: 45px 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .emoji {
+            font-size: 60px;
+            margin-bottom: 15px;
+            animation: bounce 1.5s infinite;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 17px;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            position: relative;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        button {
+            border: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        #noBtn {
+            background: #ff4757;
+            color: white;
+            box-shadow: 0 7px 15px rgba(255, 71, 87, 0.35);
+            z-index: 10;
+        }
+
+        #noBtn:hover {
+            transform: scale(1.08);
+            background: #e8414f;
+        }
+
+        #yesBtn {
+            background: #2ed573;
+            color: white;
+            position: relative;
+            box-shadow: 0 7px 15px rgba(46, 213, 115, 0.35);
+        }
+
+        #message {
+            display: none;
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2ed573;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .buttons {
+                height: 130px;
+            }
+
+            button {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="emoji">📝</div>
+
+        <h1>Be Honest! 😏</h1>
+
+        <p>
+            Did you complete your assignment by yourself
+            without using AI? 🤖
+        </p>
+
+        <div class="buttons">
+
+            <button id="yesBtn">
+                YES 😇
+            </button>
+
+            <button id="noBtn">
+                NO 🤖
+            </button>
+
+        </div>
+
+        <div id="message">
+            😂 We knew it! AI was involved!
+            <br><br>
+            Don't worry, your secret is safe 🤫
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+        const message = document.getElementById("message");
+
+        /*
+            Move the YES button whenever
+            the user tries to approach it.
+        */
+
+        function moveYesButton() {
+
+            const btnWidth = yesBtn.offsetWidth;
+            const btnHeight = yesBtn.offsetHeight;
+
+            const maxX = window.innerWidth - btnWidth - 20;
+            const maxY = window.innerHeight - btnHeight - 20;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            yesBtn.style.position = "fixed";
+
+            yesBtn.style.left = randomX + "px";
+            yesBtn.style.top = randomY + "px";
+        }
+
+
+        /* Desktop */
+        yesBtn.addEventListener("mouseenter", moveYesButton);
+
+
+        /* Mobile / Touch */
+        yesBtn.addEventListener("touchstart", function(event) {
+
+            event.preventDefault();
+
+            moveYesButton();
+
+        });
+
+
+        /* Just in case they somehow click YES */
+        yesBtn.addEventListener("click", function() {
+
+            moveYesButton();
+
+        });
+
+
+        /* NO button actually works */
+        noBtn.addEventListener("click", function() {
+
+            message.style.display = "block";
+
+            noBtn.innerHTML = "HONEST! 😂";
+
+            noBtn.style.background = "#2ed573";
+
+        });
+
+    </script>
+    <script>
+        // Number Hunter Game
+
+let secretNumber = Math.floor(Math.random() * 100) + 1;
+let luckyNumber = Math.floor(Math.random() * 100) + 1;
+
+let attempts = 7;
+let score = 0;
+
+console.log("================================");
+console.log("       🎮 NUMBER HUNTER 🎮");
+console.log("================================");
+
+console.log("Guess a number between 1 and 100");
+console.log("You have 7 attempts.");
+console.log("Try to find the secret number!");
+console.log("--------------------------------");
+
+// Game Loop
+while (attempts > 0) {
+
+    let guess = Number(prompt(
+        "Enter your guess (1-100)\n" +
+        "Attempts left: " + attempts +
+        "\nCurrent Score: " + score
+    ));
+
+    // Check invalid input
+    if (guess < 1 || guess > 100 || isNaN(guess)) {
+        alert("❌ Please enter a number between 1 and 100.");
+        continue;
+    }
+
+    attempts--;
+
+    // Correct guess
+    if (guess === secretNumber) {
+
+        let bonus = attempts * 10;
+        score = score + 100 + bonus;
+
+        alert(
+            "🎉 CORRECT!\n\n" +
+            "Secret Number: " + secretNumber +
+            "\nYour Guess: " + guess +
+            "\nBonus: " + bonus +
+            "\nScore: " + score
+        );
+
+        console.log("🎉 You found the number!");
+        break;
+    }
+
+    // Calculate difference
+    let difference;
+
+    if (guess > secretNumber) {
+        difference = guess - secretNumber;
+    } else {
+        difference = secretNumber - guess;
+    }
+
+    // Give hints
+    if (difference <= 5) {
+
+        alert("🔥 VERY CLOSE!\nTry a little higher or lower.");
+
+    } else if (difference <= 15) {
+
+        alert("🟡 GETTING CLOSE!\nYou are on the right track.");
+
+    } else if (difference <= 30) {
+
+        alert("🔵 FAR AWAY!\nYou need a bigger change.");
+
+    } else {
+
+        alert("❄️ VERY FAR!\nYour guess is nowhere near the number.");
+    }
+
+    // Higher or lower
+    if (guess < secretNumber) {
+        console.log("⬆️ Try a HIGHER number.");
+    } else {
+        console.log("⬇️ Try a LOWER number.");
+    }
+
+    console.log("Attempts left:", attempts);
+    console.log("Current score:", score);
+}
+
+// If player loses
+if (attempts === 0 && score === 0) {
+
+    alert(
+        "💀 GAME OVER!\n\n" +
+        "The secret number was: " + secretNumber +
+        "\nYour final score: " + score
+    );
+
+    console.log("💀 Game Over!");
+    console.log("Secret Number:", secretNumber);
+}
+
+// Lucky number check
+if (score > 0 && secretNumber === luckyNumber) {
+
+    score = score + 50;
+
+    alert(
+        "🍀 LUCKY NUMBER!\n\n" +
+        "You found the computer's lucky number!\n" +
+        "BONUS +50 POINTS!"
+    );
+}
+
+// Final result
+console.log("================================");
+console.log("           FINAL RESULT");
+console.log("================================");
+console.log("Secret Number:", secretNumber);
+console.log("Lucky Number:", luckyNumber);
+console.log("Final Score:", score);
+console.log("================================");
+
+alert(
+    "🏆 GAME FINISHED!\n\n" +
+    "Secret Number: " + secretNumber +
+    "\nFinal Score: " + score
+);
+
+    </script>
+
+</body>
+</html>
