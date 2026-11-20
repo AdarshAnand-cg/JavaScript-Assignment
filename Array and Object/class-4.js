@@ -5,6 +5,7 @@ students=[
 ];
 
 for(i = 0; i < students.length; i++){
+
     let studentName = students[i][0];
     let marks = students[i][1]
     let totalMarks = 0
@@ -25,7 +26,9 @@ for(i = 0; i < students.length; i++){
 let scores = [12,45,73,23]
 let largest = -Infinity
 let secondlargest = -Infinity
+
 for(const score of scores){
+    
     if(score > secondlargest && score < largest){
         secondlargest = score
     }else if(score > largest){
