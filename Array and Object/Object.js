@@ -162,3 +162,23 @@ Info.name = "Akaza as a Demon"
 Info["full name"] = "Hakuji as a Human"
 Info.status = "Initially ,he is a theif and and a martial artist expert.currently Dead inInfinity Castle Movie"
 console.log(Info)
+
+// // Deletion of Properties
+// const stuDent = {
+//     name: "Sneha",
+//     age: 18,
+//     course: "CSE"
+// };
+
+// delete stuDent.age;
+// console.log(student);   // age is removed
+
+// Create a student object with at least three properties. Delete one property using the delete operator and print the object to confirm it was removed.
+let STUDENT = {
+    Name: "Harry Potter",
+    School:"Hogwards",
+    course:"Basic Magic to Be in the Wizarding World"
+}
+delete STUDENT.Name
+console.log(STUDENT)
+
