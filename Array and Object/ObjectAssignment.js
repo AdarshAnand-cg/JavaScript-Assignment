@@ -56,7 +56,7 @@ console.log(student1_5.greeting());
 
 
 // ====================================================================================================================================
-// 2Section 2: Why Do We Need Objects?
+// Section 2: Why Do We Need Objects?
 // ====================================================================================================================================
 
 //----------------------------Question => 2.1----------------------------
@@ -120,7 +120,7 @@ console.log(car2_5);
 
 
 // ====================================================================================================================================
-// 3Section 3: Creating Objects
+// Section 3: Creating Objects
 // ====================================================================================================================================
 
 //----------------------------Question => 3.1----------------------------
@@ -204,7 +204,7 @@ console.log(students3_5);
 
 
 // ====================================================================================================================================
-// 4Section 4: Accessing Object Properties
+// Section 4: Accessing Object Properties
 // ====================================================================================================================================
 
 //----------------------------Question => 4.1----------------------------
@@ -291,7 +291,7 @@ console.log(student4_5.key);
 
 
 // ====================================================================================================================================
-// 5Section 5: Adding New Properties
+// Section 5: Adding New Properties
 // ====================================================================================================================================
 
 //----------------------------Question => 5.1----------------------------
@@ -365,7 +365,7 @@ console.log(employee5_5);
 
 
 // ====================================================================================================================================
-// 6Section 6: Updating Property Values
+// Section 6: Updating Property Values
 // ====================================================================================================================================
 
 //----------------------------Question => 6.1----------------------------
@@ -449,3 +449,173 @@ student6_5.age = newAge6_5;
 student6_5.city = newCity6_5;
 
 console.log(student6_5);
+
+
+// ====================================================================================================================================
+// Section 7: Deleting Properties
+// ====================================================================================================================================
+
+
+//----------------------------Question => 7.1----------------------------
+let student7_1 ={
+    name : "Adarsh",
+    course : "B.Tech",
+    Branch : "CSE",
+    Specialization : "AI"
+}
+delete student7_1.Specialization
+console.log(student7_1)
+
+//----------------------------Question => 7.2----------------------------
+let object7_2 = {
+    property7_2_1 : "Javascript"
+};
+delete object7_2.property7_2_2
+console.log(object7_2)  
+// Nothing Happens 
+
+//----------------------------Question => 7.3----------------------------
+let object7_3 = {
+    property7_3_1 : "Ability to Maintain Silence in a Noisy Class",
+    property7_3_2 : "Ability to Watch Anime in Exam Time",
+    property7_3_3 : "Ability to Resist Anger even when someone is making fun of You",
+    property7_3_4 : "Ability to Seat at any place for Long time"
+};
+delete object7_3.property7_3_1
+delete object7_3.property7_3_2
+console.log(object7_3)
+
+//----------------------------Question => 7.4----------------------------
+let object7_4 = {
+    property7_4_1 : "Hello",
+    property7_4_2 : "Javascript"
+
+}
+delete object7_4.property7_4_2
+console.log(object7_4)
+
+//----------------------------Question => 7.5----------------------------
+let object7_5 = {
+    property7_5_1 : "Hello",
+    property7_5_2 : "Javascript"
+
+}
+delete object7_5.property7_5_2
+object7_5.property7_5_2 = "Python"
+console.log(object7_5)
+
+
+// ====================================================================================================================================
+// Section 8: Objects Can Store Anything
+// ====================================================================================================================================
+
+
+//----------------------------Question => 8.1----------------------------
+let object8_1 = {
+    array8_1 : ["Hello", "Everyone", 1],
+    property8_2 : "Adarsh Anand"
+}
+
+//----------------------------Question => 8.2----------------------------
+let object8_2 = {
+    object8_2_1 : {name : "Adarsh Anand", status : "Student Of B.Tech", age : 18},
+    property8_2_2 : "Any Random Property"
+}
+
+//----------------------------Question => 8.3----------------------------
+const product8_3 = {
+    colors : ["Red", "Green", "Blue", "Black", "Voilet", "white"],
+    manufacturer8_3_2 : {name : "Adarsh", age : 18}
+}
+
+//----------------------------Question => 8.4----------------------------
+let object8_4 = {
+    name : "Shadow",
+    dialogue : "I am Atomic",
+    getInfo(){
+        return "The Character Name is " + object8_4.name +"And his Famous Dialogue is " + object8_4.dialogue + "."
+    }
+}
+console.log(object8_4.getInfo())
+
+//----------------------------Question => 8.5----------------------------
+let object8_5 = {
+    string : "Hello World",
+    number : 13,
+    array : ["I", "Am", "Atomic"],
+    object8_5_4 : {name : "Eren Yeager", verse : "Attack On Titan", famousSong : "The Rumbling"},
+    method8_5_5(){
+        return "My Name is Natsuki Subaru"
+    }
+}
+console.log(object8_5.method8_5_5())
+console.log(Object.values(object8_5))
+
+
+// ====================================================================================================================================
+// Section 9: Methods & the this Keyword
+// ====================================================================================================================================
+
+
+//----------------------------Question => 9.1----------------------------
+let object9_1 = {
+    property9_1_1 : "Hello World",
+    method9_1_2(){
+        return "God is The Greatest Lie of Human Civilisation"
+    }
+}
+console.log(object9_1.method9_1_2())
+
+//----------------------------Question => 9.2----------------------------
+let object9_2 = {
+    property9_2_1 : "Hello World",
+    method9_2_2(){
+        return this.property9_2_1 + " I want You To Say that:-"+"God is The Greatest Lie of Human Civilisation"
+    }
+}
+console.log(object9_2.method9_2_2())
+
+//----------------------------Question => 9.3----------------------------
+let object9_3 ={
+    name : "Nikhil Sir",
+    status : "JavaScript Tutor",
+    getDetails(){
+        return this.name + " is our " + this.status + "."
+    }
+}
+console.log(object9_3.getDetails())
+
+//----------------------------Question => 9.4----------------------------
+let object9_4 ={
+    name : "Adarsh Anand",
+    marks : 98,
+    status : "Learning JavaScript",
+    getDetails(){
+        if( this.marks > 40){
+            return "Passed"
+        }
+    }
+}
+console.log(object9_4.getDetails())
+
+//----------------------------Question => 9.5----------------------------
+let object9_5 ={
+    firstName : "Adarsh ",
+    lastName : "Anand",
+    age : 18,
+    status : "Learning JavaScript",
+    checkAge(){
+        if( this.age > 18){
+            return "Adult"
+        }else{
+            return "Teenage"
+        }
+    }
+}
+console.log(object9_5.getDetails())
+
+
+
+
+
+
